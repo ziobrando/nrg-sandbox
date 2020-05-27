@@ -20,7 +20,7 @@ public class MongoMapProjection implements MapProjection {
 
     /**
      * Writes on the local persistence in the appropriate format.
-     * @param event
+     * @param event the CabinAddedToPatch coming form the foreign Bounded Context
      */
     @Override
     public void on(CabinAddedToPatch event) {
@@ -36,7 +36,7 @@ public class MongoMapProjection implements MapProjection {
     /**
      * Possibly a shortcut here. Need to investigate existing policies for the IDs
      *
-     * @param event
+     * @param event the CabinAddedToPatch that contains all the information.
      * @return a valid id for the local persistence.
      */
     private String resolveItemId(CabinAddedToPatch event) {

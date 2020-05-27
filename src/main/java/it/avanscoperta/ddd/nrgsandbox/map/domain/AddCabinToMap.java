@@ -6,6 +6,8 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
  * Adds a Cabinet to the local map.
+ * We need a Command only if the Map can actually reject the update.
+ *
  */
 public class AddCabinToMap {
 
@@ -21,4 +23,6 @@ public class AddCabinToMap {
         this.label = label;
         this.cabinId = cabinId;
     }
+
+
 }
